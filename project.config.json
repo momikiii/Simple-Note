@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
 	"appid": "wxf9fe1644856c5abc",
-	"projectname": "ColorUI-template",
+	"projectname": "Simple-Note",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
