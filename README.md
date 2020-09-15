@@ -8,7 +8,6 @@
 
 **git commit -m '提交描述'**
 提交所有暂存区文件到本地git仓库
-lalala
 
 **git push**
 将本地仓库代码推送至远程仓库
