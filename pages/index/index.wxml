@@ -15,3 +15,8 @@
 <view class="text-center margin-top">
   <text class="text-grey text-xl">{{motto}}</text>
 </view>
+<view class="center">
+<navigator url="/pages/demo/demo">
+<button class="cu-btn bg-white ">跳转至demo页</button>
+</navigator>
+</view>

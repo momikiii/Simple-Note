@@ -1,0 +1,10 @@
+<view class='box animated'>
+	<view class="logo-box">
+		<image class="logo" mode="aspectFit" src="https://7369-simple-note-develop-sql1w-1303186574.tcb.qcloud.la/%E6%96%B9.png?sign=c979ecfe01464e6afda938d56c78b53b&t=1600314922"></image>
+	</view>
+	<view class="text-box">
+		<view class="name">SIMPLE NOTE</view>
+		<!-- <view class="subname">短记</view> -->
+		<!-- <view class="display">OPEN YOUR HEART RECORD YOURSELF AT THIS MOMENT</view> -->
+	</view>
+</view>

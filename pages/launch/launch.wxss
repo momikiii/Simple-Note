@@ -1,0 +1,35 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+page{
+  background-color: white;
+}
+.logo-box{
+  text-align: center;
+}
+.logo{
+  
+  margin-top: 450rpx;
+  width: 170rpx;
+  height: 170rpx;
+}
+.text-box{
+  margin-top: 500rpx;
+  text-align: center;
+}
+.name{
+  font-size: 50rpx;
+  font-weight: 600;
+}
+.subname{
+  margin-top: 30rpx;
+  font-size: 35rpx;
+  color: rgb(0, 0, 0);
+}
+.display{
+  margin-top: 200rpx;
+  font-size: 25rpx;
+}
+.box{
+  animation: fadeIn;
+  animation-duration: 3.5s;
+}

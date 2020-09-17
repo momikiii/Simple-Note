@@ -1,0 +1,6 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+.center{
+  text-align: center;
+  margin-top: 100rpx;
+}
