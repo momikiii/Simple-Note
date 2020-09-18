@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/demo/demo",
-    "pages/launch/launch"
+    "pages/launch/launch",
+    "pages/diary/diary"
   ],
   "window": {
     "backgroundTextStyle": "light",

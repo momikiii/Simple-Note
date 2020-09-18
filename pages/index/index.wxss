@@ -1,6 +1,36 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
-.center{
-  text-align: center;
-  margin-top: 100rpx;
+page{
+}
+.icon-box{
+  position: relative;
+  height: 100%;
+}
+.leftIcon{
+  position: absolute;
+  left: 35rpx;
+  font-size: 50rpx;
+  bottom: 17rpx;
+}
+.date{
+  color: rgb(60, 60, 60);
+  font-size: 40rpx;
+  font-weight: 700;
+  position: absolute;
+  bottom: 20rpx;
+  left: 37%;
+  letter-spacing: 5rpx;
+}
+.hover{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+}
+.icon{
+  position: absolute;
+  left: 35rpx;
+  font-size: 50rpx;
+  bottom: 17rpx;
 }

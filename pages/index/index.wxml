@@ -1,22 +1,14 @@
-<cu-custom bgColor="bg-gradual-blue">
-  <view slot="content">ColorUI 空白模板</view>
-</cu-custom>
-<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
-  <view class="flex justify-center">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
-    <block wx:else>
-      <view class='text-center'>
-        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
-        <view class="padding">{{userInfo.nickName}}</view>
-      </view>
-    </block>
-  </view>
-</view>
-<view class="text-center margin-top">
-  <text class="text-grey text-xl">{{motto}}</text>
-</view>
-<view class="center">
-<navigator url="/pages/demo/demo">
-<button class="cu-btn bg-white ">跳转至demo页</button>
-</navigator>
+<view class="bg-white" style="height:{{CustomBar}}px">
+	<view class="hover" wx:if="{{leftFlag}}">
+		<view class="icon" style="top: {{CustomBar-35}}px">
+			<view class="cuIcon-close"></view>
+		</view>
+    <view class="txt"></view>
+	</view>
+	<view class="icon-box">
+		<view class="date">
+			SEP.2020
+		</view>
+		<view class="cuIcon-sort leftIcon" bindtap="leftmenu"></view>
+	</view>
 </view>
