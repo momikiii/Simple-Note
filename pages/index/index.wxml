@@ -1,7 +1,12 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">ColorUI 空白模板</view>
 </cu-custom>
-<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
+<!-- <diary-card/> -->
+<create-card/>
+<!-- <pic-card/> -->
+
+
+<!-- <view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
   <view class="flex justify-center">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
     <block wx:else>
@@ -19,4 +24,4 @@
 <navigator url="/pages/demo/demo">
 <button class="cu-btn bg-white ">跳转至demo页</button>
 </navigator>
-</view>
+</view> -->
