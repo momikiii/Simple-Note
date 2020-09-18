@@ -1,2 +1,20 @@
-<!--components/CreateCard/CreateCard.wxml-->
-<text>components/CreateCard/CreateCard.wxml</text>
+<view class="card-box">
+  <view class="date">
+    <view class="day">
+      23
+    </view>
+    <view class="month">
+      NOV.2017
+    </view>
+    <!-- 竖线 -->
+    <view class="splice"></view>
+  </view>
+  <view class="add">
+    <view class="plus">
+      <view class="cuIcon-roundaddfill"></view>
+    </view>
+  </view>
+</view>
+<view class="wether">
+
+</view>
