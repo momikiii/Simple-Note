@@ -8,24 +8,30 @@ Page({
     CustomBar: app.globalData.CustomBar,
     keyboardHeight: 0,
     changeHeight: 77,
-    isIOS: false
+    isIOS: false,
+    Title: 80,
+    openId: app.globalData.openid,
+    noteId: "",
+    mode: '',
   },
-  back(){
-    wx.navigateBack({
-      delta: 1,
-    })
-  },
-  readOnlyChange() {
-    this.setData({
-      readOnly: !this.data.readOnly
-    })
-  },
-  onLoad() {
+  onLoad(options) {
     const platform = wx.getSystemInfoSync().platform
     const isIOS = platform === 'ios'
-    this.setData({ isIOS})
+    const db = wx.cloud.database()
+    console.log(openId)
+    this.setData({ isIOS,mode: options.mode})
+    //初始化富文本
+    db.collection('notes').where({
+      _openid: this.data.openId, // 填入当前用户 openid
+      _id: this.data.noteId
+    }).get().then(res => {
+      this.editorCtx.setContents({
+        html: res.data[0].html
+      })
+    })
+    
     const that = this
-    this.updatePosition(0)
+    this.updatePosition(1)
     let keyboardHeight = 0
     wx.onKeyboardHeightChange(res => {
       if (res.height === keyboardHeight) return
@@ -43,6 +49,68 @@ Page({
 
     })
   },
+  save(){
+    const db = wx.cloud.database()
+    // console.log("失去焦点")
+    this.editorCtx.getContents({
+      success:(res)=>{
+        //文字
+        // console.log(Object.values(res.delta.ops[0]))
+        //图片
+        // console.log(Object.values(Object.values(res.delta.ops[0])[1])[0])
+
+        console.log(res)
+        for(let item in res.delta.ops){
+          for(let item2 in item){
+            console.log(item2)
+          }
+        }
+        //图片上传至云存储
+        // let item = Object.values(Object.values(res.delta.ops[0])[1])
+        // let suffix = /\.\w+$/.exec(item)[0];
+        // wx.cloud.uploadFile({
+        //   cloudPath: new Date().getTime() + suffix,
+        //   filePath: Object.values(Object.values(res.delta.ops[0])[1])[0],
+        //   success: res => {
+        //     console.log(res.fileID)
+        //   },
+        //   fail(res){
+        //     console.log("上传图片失败",res)
+        //   }
+        // })
+
+        //上传至数据库
+        db.collection("notes").add({
+          data:{
+            day: new Date().toDateString().slice(8,10),
+            month: new Date().toDateString().slice(4,7).toUpperCase(),
+            year: new Date().toDateString().slice(11,15),
+            html: res.html,
+            preview: Object.values(res.delta.ops[0])[0]
+            
+          },
+          success(){
+            console.log("上传成功")
+          },
+          fail(res){
+            console.log("上传失败",res)
+          }
+        })
+      }
+    })
+    
+  },
+  back(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  readOnlyChange() {
+    this.setData({
+      readOnly: !this.data.readOnly
+    })
+  },
+  
   updatePosition(keyboardHeight) {
     const toolbarHeight = 50
     const { windowHeight, platform } = wx.getSystemInfoSync()

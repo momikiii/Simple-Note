@@ -1,17 +1,8 @@
 <view class="bg-white">
 	<view class="bg-white" style="height:{{CustomBar}}px">
-		<view class="hover animated {{MenuAnimate}}" wx:if="{{leftFlag}}">
-			<view class="icon" style="top: {{CustomBar-35}}px">
-				<view class="cuIcon-close animated " bindtap="close"></view>
-			</view>
-			<view class="txt" style="margin-top:{{CustomBar+40}}px">
-				<view class="txt-item animated {{txtItemAnimate}} {{item.class}}" style="margin-bottom:{{CustomBar-10}}px"
-					wx:for="{{HoverText}}" wx:key="id">{{item.text}}</view>
-			</view>
-		</view>
 		<view class="icon-box">
-			<view class="date">
-				WRITING
+			<view class="date" bindtap="titleArea">
+				{{mode}} 
 			</view>
 			<view class="leftIcon" bindtap="back">
 				<view class="cuIcon-back"></view>
@@ -19,13 +10,12 @@
 		</view>
 	</view>
 	<date-info></date-info>
-
 	<view class="container" style="height: {{changeHeight}}vh;">
 		<editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
-			bindready="onEditorReady">
+			bindready="onEditorReady" show-img-resize="true" bindblur="">
 		</editor>
 	</view>
-
+<button bindtap="save">test</button>
 	<view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}"
 		style="bottom: {{isIOS ? keyboardHeight : 0}}px">
 		<i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>

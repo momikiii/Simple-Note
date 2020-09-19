@@ -20,7 +20,7 @@ Component({
   methods: {
     createCard(){
       wx.navigateTo({
-        url: '/pages/cardpage/cardpage',
+        url: '/pages/cardpage/cardpage?mode=WRITTING',
       })
     }
   }

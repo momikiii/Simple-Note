@@ -16,6 +16,6 @@
 		</view>
 	</view>
 </view>
-<create-card />
-<note-card />
-<collection-card />
+<create-card></create-card>
+<note-card ></note-card>
+<collection-card></collection-card>

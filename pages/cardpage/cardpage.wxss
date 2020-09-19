@@ -22,11 +22,13 @@
 }
 .date{
   color: rgb(60, 60, 60);
+  width: 100%;
+  text-align: center;
   font-size: 40rpx;
   font-weight: 700;
   position: absolute;
-  bottom: 20rpx;
-  left: 38%;
+  bottom: 18rpx;
+  /* left: 39%; */
   letter-spacing: 5rpx;
 }
 .hover{
@@ -48,26 +50,8 @@
   font-size: 45rpx;
   font-weight: 700;
 }
-.hover{
-  animation-duration: 0.5s;
-}
-.txt-item{
-  animation-duration: 0.5s;
-}
-.alarm{
-  animation-delay: 0.1s;
-}
-.shareUs{
-  animation-delay: 0.2s;
-}
-.nightMode{
-  animation-delay: 0.3s;
-}
-.feedBack{
-  animation-delay: 0.4s;
-}
-.aboutUs{
-  animation-delay: 0.5s;
+.bingo{
+  margin-bottom: 10rpx;
 }
 
 

@@ -1,17 +1,18 @@
 //app.js
 App({
+
   onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+    //云开发
+    wx.cloud.init({
+      env: 'simple-note-develop-sql1w',
+      traceUser: true
     })
+    // 登录
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -47,6 +48,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   }
 })

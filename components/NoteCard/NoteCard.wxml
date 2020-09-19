@@ -1,21 +1,21 @@
-<view class="card-box">
+<view class="card-box" wx:for="{{notes}}">
   <view class="date">
     <view class="day">
-      23
+      {{item.day}}
     </view>
     <view class="month">
-      NOV.2017
+      {{item.month}}.{{item.year}}
     </view>
     <!-- 竖线 -->
     <view class="splice" hidden="{{isImg}}"></view>
   </view>
   <view class="add" bindtap="createCard">
-    <!-- <view class="txt">
-      Eyes are raining for her,heart is holding umbrella fo her,this is love.
-    </view> -->
-    <view class="pic">
-      <image src="{{imgsrc}}" mode="widthFix"></image>
+    <view class="txt">
+      {{item.preview}}
     </view>
+    <!-- <view class="pic">
+      <image src="{{imgsrc}}" mode="widthFix"></image>
+    </view> -->
   </view>
 
   <view class="bottom-area">

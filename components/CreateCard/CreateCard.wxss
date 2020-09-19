@@ -42,5 +42,5 @@
 .plus{
   text-align: center;
   font-size: 125rpx;
-  margin-top: 43rpx;
+  line-height: 220rpx;
 }
