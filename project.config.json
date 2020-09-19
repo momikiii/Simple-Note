@@ -31,7 +31,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.4.2",
+  "libVersion": "2.12.2",
   "appid": "wxf9fe1644856c5abc",
   "projectname": "Simple-Note",
   "debugOptions": {
@@ -82,6 +82,20 @@
           "id": -1,
           "name": "日记页",
           "pathName": "pages/diary/diary",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "编辑页",
+          "pathName": "pages/cardpage/cardpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "Editor",
+          "pathName": "pages/editor/editor",
           "query": "",
           "scene": null
         }

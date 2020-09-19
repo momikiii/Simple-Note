@@ -10,7 +10,7 @@ page{
   position: absolute;
   left: 35rpx;
   font-size: 50rpx;
-  bottom: 17rpx;
+  bottom: 18rpx;
 }
 .date{
   color: rgb(60, 60, 60);
@@ -33,4 +33,31 @@ page{
   left: 35rpx;
   font-size: 50rpx;
   bottom: 17rpx;
+}
+.txt{
+  /* margin-top: 260rpx; */
+  text-align: center;
+  font-size: 45rpx;
+  font-weight: 700;
+}
+.hover{
+  animation-duration: 0.3s;
+}
+.txt-item{
+  animation-duration: 0.3s;
+}
+.alarm{
+  animation-delay: 0.05s;
+}
+.shareUs{
+  animation-delay: 0.1s;
+}
+.nightMode{
+  animation-delay: 0.15s;
+}
+.feedBack{
+  animation-delay: 0.2s;
+}
+.aboutUs{
+  animation-delay: 0.25s;
 }

@@ -1,4 +1,67 @@
-@import "/utils/animate.wxss";
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
 
+page {}
 
+.icon-box {
+  position: relative;
+  height: 100%;
+}
 
+.leftIcon {
+  position: absolute;
+  left: 35rpx;
+  font-size: 50rpx;
+  bottom: 18rpx;
+}
+
+.date {
+  color: rgb(60, 60, 60);
+  font-size: 40rpx;
+  font-weight: 700;
+  position: absolute;
+  bottom: 20rpx;
+  left: 37%;
+  letter-spacing: 5rpx;
+}
+
+.hover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+}
+
+.icon {
+  position: absolute;
+  left: 35rpx;
+  font-size: 50rpx;
+  bottom: 17rpx;
+}
+
+.txt {
+  /* margin-top: 260rpx; */
+  text-align: center;
+  font-size: 45rpx;
+  font-weight: 700;
+}
+
+.txt-item {
+  animation-duration: 0.5s;
+}
+.txt-item1{
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
+}
+.txt-item2{
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+}.txt-item3{
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
+}
+
+.alarm {
+  --animate-delay: 0.3s;
+}

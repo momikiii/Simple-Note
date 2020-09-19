@@ -9,12 +9,9 @@
     <!-- 竖线 -->
     <view class="splice"></view>
   </view>
-  <view class="add">
+  <view class="add" bindtap="createCard">
     <view class="plus">
       <view class="cuIcon-roundaddfill"></view>
     </view>
   </view>
-</view>
-<view class="wether">
-
 </view>

@@ -1,126 +1,106 @@
-// pages/animate/animate.js
-
-const animateData = {
-  'Attention Seekers': ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello', 'heartBeat'],
-  'Bouncing Entrances': ['bounceIn', 'bounceInDown', 'bounceInLeft', 'bounceInRight', 'bounceInUp'],
-  'Bouncing Exits': ['bounceOut', 'bounceOutDown', 'bounceOutLeft', 'bounceOutRight', 'bounceOutUp'],
-  'Fading Entrances': ['fadeIn', 'fadeInDown', 'fadeInDownBig', 'fadeInLeft', 'fadeInLeftBig', 'fadeInRight', 'fadeInRightBig', 'fadeInUp', 'fadeInUpBig'],
-  'Fading Exits': ['fadeOut', 'fadeOutDown', 'fadeOutDownBig', 'fadeOutLeft', 'fadeOutLeftBig', 'fadeOutRight', 'fadeOutRightBig', 'fadeOutUp', 'fadeOutUpBig'],
-  'Flippers': ['flip', 'flipInX', 'flipInY', 'flipOutX', 'flipOutY'],
-  'Lightspeed': ['lightSpeedIn', 'lightSpeedOut'],
-  'Rotating Entrances': ['rotateIn', 'rotateInDownLeft', 'rotateInDownRight', 'rotateInUpLeft', 'rotateInUpRight'],
-  'Rotating Exits': ['rotateOut', 'rotateOutDownLeft', 'rotateOutDownRight', 'rotateOutUpLeft', 'rotateOutUpRight'],
-  'Sliding Entrances': ['slideInUp', 'slideInDown', 'slideInLeft', 'slideInRight'],
-  'Sliding Exits': ['slideOutUp', 'slideOutDown', 'slideOutLeft', 'slideOutRight'],
-  'Zoom Entrances': ['zoomIn', 'zoomInDown', 'zoomInLeft', 'zoomInRight', 'zoomInUp'],
-  'Zoom Exits': ['zoomOut', 'zoomOutDown', 'zoomOutLeft', 'zoomOutRight', 'zoomOutUp'],
-  'Specials': ['hinge', 'jackInTheBox', 'rollIn', 'rollOut']
-};
-Page({
+const app = getApp();
+Component({
   /**
-   * 页面的初始数据
+   * 组件的一些选项
+   */
+  options: {
+    addGlobalClass: true,
+    multipleSlots: true
+  },
+  /**
+   * 组件的对外属性
+   */
+  properties: {
+    bgColor: {
+      type: String,
+      default: ''
+    },
+    isCustom: {
+      type: [Boolean, String],
+      default: false
+    },
+    isBack: {
+      type: [Boolean, String],
+      default: false
+    },
+    bgImage: {
+      type: String,
+      default: ''
+    },
+  },
+  /**
+   * 组件的初始数据
    */
   data: {
-      animateType: '',
-
-      columns: [{
-          values: Object.keys(animateData),
-              className: 'column1'
-          },
-          {
-              values: animateData['Attention Seekers'],
-              className: 'column2',
-              defaultIndex: 0
-          }
-      ],
-
-      show:false
-
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
+    Custom: app.globalData.Custom,
+    leftFlag: true,
+    MenuAnimate: "slideInLeft",
+    txtItemAnimate: "slideInLeft",
+    HoverText:[{
+      id:1,
+      class: "allCards",
+      text: "ALL CARDS",
+      url: ""
+    },{
+      id:2,
+      class: "animate__delay-2s",
+      text: "ALARM",
+      url: ""
+    },{
+      id:3,
+      class: "shareUs",
+      text: "SHARE US",
+      url: ""
+    },{
+      id:4,
+      class: "nightMode",
+      text: "NIGHT MODE",
+      url: ""
+    },{
+      id:5,
+      class: "feedBack",
+      text: "FEEDBACK",
+      url: ""
+    },{
+      id:6,
+      class: "aboutUs",
+      text: "ABOUT US",
+      url: ""
+    },]
   },
-  popChange(){
-      this.setData({
-          show:!this.data.show
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    BackPage() {
+      wx.navigateBack({
+        delta: 1
+      });
+    },
+    toHome() {
+      wx.reLaunch({
+        url: '/pages/index/index',
       })
-  },
-
-  onChange(event) {
-      const { picker, value, index } = event.detail;
-      picker.setColumnValues(1, animateData[value[0]]);
-  },
-
-  selectAnimate(e){
+    },
+    close(){
       this.setData({
-          animateType: e.detail.value[1],
-          animateTypeBtnText:e.detail.value[1]
+        MenuAnimate: "slideOutLeft"
       })
-      this.popChange()
-  },
-
-  animateStart(){
+      setTimeout(()=>{
+        this.setData({
+          leftFlag: false,
+        })
+        console.log(this.data.leftFlag)
+      },1000)
+    },
+    leftmenu() {
       this.setData({
-          animateType: this.data.animateTypeBtnText
+        MenuAnimate: "slideInLeft",
+        leftFlag: true,
       })
-  },
-
-  animateEnd(){
-      this.setData({
-          animateType:''
-      })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+      console.log(this.data.leftFlag)
+    }
   }
 })

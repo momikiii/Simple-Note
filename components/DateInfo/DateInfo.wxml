@@ -1,0 +1,8 @@
+<view class="date-box">
+  <view class="day">25</view>
+  <view class="splice">/</view>
+  <view class="month">OCT.2020</view>
+  <view class="weather">
+    <view class="iconfont icon-fine_icon" style="font-size: 50rpx;font-weight: 550;"></view>
+  </view>
+</view>

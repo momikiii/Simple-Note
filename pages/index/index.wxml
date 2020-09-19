@@ -1,15 +1,19 @@
 <view class="bg-white" style="height:{{CustomBar}}px">
-	<view class="hover" wx:if="{{leftFlag}}">
+	<view class="hover animated {{MenuAnimate}}" wx:if="{{leftFlag}}">
 		<view class="icon" style="top: {{CustomBar-35}}px">
-			<view class="cuIcon-close"></view>
+			<view class="cuIcon-close animated " bindtap="close"></view>
 		</view>
-    <view class="txt"></view>
+		<view class="txt" style="margin-top:{{CustomBar+40}}px">
+			<view class="txt-item animated {{txtItemAnimate}} {{item.class}}" style="margin-bottom:{{CustomBar-10}}px" wx:for="{{HoverText}}" wx:key="id" >{{item.text}}</view>
+		</view>
 	</view>
 	<view class="icon-box">
 		<view class="date">
 			SEP.2020
 		</view>
-		<view class="cuIcon-sort leftIcon" bindtap="leftmenu"></view>
+		<view class="leftIcon">
+			<view class="cuIcon-sort" bindtap="leftmenu"></view>
+		</view>
 	</view>
 </view>
-<create-card/>
+<create-card />

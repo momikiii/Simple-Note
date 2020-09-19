@@ -1,0 +1,125 @@
+@import "../../colorui/main.wxss"; 
+@import "../../colorui/icon.wxss";
+@import "/common/lib/weui.wxss"; 
+@import "./assets/iconfont.wxss";
+
+
+.bg-white{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+}
+.icon-box{
+  position: relative;
+  height: 100%;
+}
+.leftIcon{
+  position: absolute;
+  left: 35rpx;
+  font-size: 42rpx;
+  bottom: 20rpx;
+}
+.date{
+  color: rgb(60, 60, 60);
+  font-size: 40rpx;
+  font-weight: 700;
+  position: absolute;
+  bottom: 20rpx;
+  left: 38%;
+  letter-spacing: 5rpx;
+}
+.hover{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+}
+.icon{
+  position: absolute;
+  left: 35rpx;
+  font-size: 50rpx;
+  bottom: 17rpx;
+}
+.txt{
+  /* margin-top: 260rpx; */
+  text-align: center;
+  font-size: 45rpx;
+  font-weight: 700;
+}
+.hover{
+  animation-duration: 0.5s;
+}
+.txt-item{
+  animation-duration: 0.5s;
+}
+.alarm{
+  animation-delay: 0.1s;
+}
+.shareUs{
+  animation-delay: 0.2s;
+}
+.nightMode{
+  animation-delay: 0.3s;
+}
+.feedBack{
+  animation-delay: 0.4s;
+}
+.aboutUs{
+  animation-delay: 0.5s;
+}
+
+
+
+
+.container {
+  position: absolute; 
+  top: 300rpx; 
+  /* left: 50rpx;  */
+  height: 100%;
+  width: 100%;
+  /* border: 10px solid black; */
+}
+
+.ql-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 85%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 10px 10px 20px 10px;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+.iconfont {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  /* background-color: var(--ghostWhite); */
+}
+
+.toolbar {
+  /* background-color: var(--ghostWhite); */
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: none;
+  border-right: none;
+}
+

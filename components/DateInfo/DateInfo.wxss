@@ -1,0 +1,37 @@
+@import "/utils/iconfont.wxss";
+.date-box{
+  margin: 20rpx auto;
+  width: 650rpx;
+  height: 110rpx;
+  border-radius: 100rpx;
+  background-color: rgb(239, 239, 239);
+}
+.day{
+  float: left;
+  margin-left: 40rpx;
+  line-height: 110rpx;
+  font-size: 60rpx;
+  font-weight: 800;
+  color: rgb(36, 36, 36);
+  letter-spacing: 2rpx;
+}
+.splice{
+  float: left;
+  font-size: 78rpx;
+  line-height: 110rpx;
+  margin-left: 20rpx;
+  color: rgb(36, 36, 36);
+}
+.month{
+  float: left;
+  line-height: 140rpx;
+  font-size: 22rpx;
+  margin-left: 20rpx;
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+}
+.weather{
+  line-height: 110rpx;
+  float: right;
+  margin-right: 40rpx;
+}
