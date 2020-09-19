@@ -17,3 +17,5 @@
 	</view>
 </view>
 <create-card />
+<note-card />
+<collection-card />

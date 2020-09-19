@@ -65,13 +65,6 @@
       "current": -1,
       "list": [
         {
-          "id": 0,
-          "name": "demo",
-          "pathName": "pages/demo/demo",
-          "query": "",
-          "scene": null
-        },
-        {
           "id": 1,
           "name": "启动页",
           "pathName": "pages/launch/launch",

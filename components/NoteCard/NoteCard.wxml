@@ -1,0 +1,41 @@
+<view class="card-box">
+  <view class="date">
+    <view class="day">
+      23
+    </view>
+    <view class="month">
+      NOV.2017
+    </view>
+    <!-- 竖线 -->
+    <view class="splice" hidden="{{isImg}}"></view>
+  </view>
+  <view class="add" bindtap="createCard">
+    <!-- <view class="txt">
+      Eyes are raining for her,heart is holding umbrella fo her,this is love.
+    </view> -->
+    <view class="pic">
+      <image src="{{imgsrc}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <view class="bottom-area">
+    <view class="weather">
+      <view class="weather-icon">
+        <view class="iconfont icon-fine_icon" style="font-size: 40rpx;font-weight: 600;"></view>
+      </view>
+      <view class="weather-txt">
+        SUNNY
+      </view>
+    </view>
+
+    <view class="edit">
+      <view class="reedit">
+        <view class="cuIcon-write"></view>
+      </view>
+      <view class="delete">
+        <view class="cuIcon-delete"></view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "diary-card": "/components/DiaryCard/DiaryCard",
-    "pic-card": "/components/PicCard/PicCard",
-    "create-card": "/components/CreateCard/CreateCard"
+    "note-card": "/components/NoteCard/NoteCard",
+    "create-card": "/components/CreateCard/CreateCard",
+    "collection-card": "/components/CollectionCard/CollectionCard"
   }
 }

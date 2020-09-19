@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-    "diary-card": "/components/DiaryCard/DiaryCard",
-    "pic-card": "/components/PicCard/PicCard",
     "create-card": "/components/CreateCard/CreateCard",
     "date-info": "/components/DateInfo/DateInfo"
   },

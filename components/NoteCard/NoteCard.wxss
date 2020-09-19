@@ -1,0 +1,97 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+@import "/utils/iconfont.wxss";
+
+.card-box{
+  margin: 30rpx auto;
+  width: 690rpx;
+  height: 340rpx;
+  background-color: white;
+  position: relative;
+}
+.date{
+  top: 10rpx;
+  position: relative;
+  width: 180rpx;
+  height: 100%;
+  /* background-color: #66ccff; */
+  float: left;
+}
+.add{
+  float: left;
+  width: 510rpx;
+  height: 100%;
+  /* background-color: pink; */
+}
+.day{
+  margin-top: 55rpx;
+  text-align: center;
+  font-weight: 600;
+  font-size: 65rpx;
+}
+.month{
+  margin-top: 18rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.splice{
+  position: absolute;
+  width: 4rpx;
+  height: 110rpx;
+  background-color: rgb(235, 235, 235);
+  right: 0rpx;
+  top: 60rpx;
+}
+.txt{
+  padding: 30rpx;
+  padding-top: 68rpx;
+  width: 95%;
+  height: 100%;
+  font-size: 28rpx;
+  letter-spacing: 1.5;
+  line-height: 1.3;
+  color: rgb(94, 94, 94);
+}
+.pic{
+  background-color: pink;
+  width: 100%;
+  height: 100%;
+}
+.pic image{
+  width: 100%;
+  height: 100%;
+}
+.bottom-area{
+  position: absolute;
+  bottom: 0;
+  height: 90rpx;
+  width: 100%;
+  background-color: rgb(247, 248, 250);
+}
+.weather-icon{
+  float: left;
+  line-height: 90rpx;
+  color: rgb(117, 117, 117);
+  margin-left: 30rpx;
+}
+.weather-txt{
+  float: left;
+  line-height: 90rpx;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  font-weight: 650;
+  color: rgb(121, 121, 121);
+}
+.edit{
+  line-height: 90rpx;
+  margin-right: 40rpx;
+  font-size: 40rpx;
+  color: rgb(175, 175, 175);
+}
+.delete{
+  float: right;
+  margin-right: 50rpx;
+}
+.reedit{
+  float: right;
+}

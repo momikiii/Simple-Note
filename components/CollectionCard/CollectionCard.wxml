@@ -1,0 +1,13 @@
+<view class="card-box">
+  <view class="date">
+    <view class="day">
+      23 Cards
+    </view>
+    <view class="month">
+      AUG.2020
+    </view>
+  </view>
+  <view class="more">
+    <view class="cuIcon-moreandroid"></view>
+  </view>
+</view>

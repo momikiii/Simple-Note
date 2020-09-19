@@ -1,4 +1,4 @@
-// components/DiaryCard/DiaryCard.js
+// components/CreateCard/CreateCard.js
 Component({
   /**
    * 组件的属性列表
@@ -11,13 +11,17 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    createCard(){
+      wx.navigateTo({
+        url: '/pages/cardpage/cardpage',
+      })
+    }
   }
 })
