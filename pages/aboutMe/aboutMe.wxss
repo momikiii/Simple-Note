@@ -75,10 +75,19 @@
   color: rgb(128, 128, 128);
   line-height: 1.5;
 }
-
+.avatar{
+  animation: fadeIn 2s;
+}
+.web{
+  animation: flipInX 1s;
+  position: absolute;
+  left: 32%;
+  bottom: 80rpx;
+}
 .subTitle{
+  letter-spacing: 2rpx;
   font-size: 45rpx;
-  font-weight: 600;
+  font-weight: 800;
   margin-top: 30rpx;
 }
 .website{
