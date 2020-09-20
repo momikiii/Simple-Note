@@ -10,27 +10,34 @@ Page({
     changeHeight: 77,
     isIOS: false,
     Title: 80,
-    openId: app.globalData.openid,
-    noteId: "",
+    // openId: app.globalData.openid,
+    noteId: null,
     mode: '',
   },
   onLoad(options) {
     const platform = wx.getSystemInfoSync().platform
     const isIOS = platform === 'ios'
     const db = wx.cloud.database()
-    console.log(openId)
-    this.setData({ isIOS,mode: options.mode})
-    //初始化富文本
-    db.collection('notes').where({
-      _openid: this.data.openId, // 填入当前用户 openid
-      _id: this.data.noteId
-    }).get().then(res => {
-      this.editorCtx.setContents({
-        html: res.data[0].html
-      })
+    this.setData({
+      isIOS,
+      mode: options.mode,
+      noteId: options.id
     })
-    
+    console.log(this.data.noteId)
+
+    if (this.data.noteId != 0) {
+      //初始化富文本
+      db.collection('notes').where({
+        _id: this.data.noteId
+      }).get().then(res => {
+        this.editorCtx.setContents({
+          html: res.data[0].html
+        })
+      })
+    }
+
     const that = this
+    //更改键盘高度，默认0
     this.updatePosition(1)
     let keyboardHeight = 0
     wx.onKeyboardHeightChange(res => {
@@ -49,20 +56,20 @@ Page({
 
     })
   },
-  save(){
+  save() {
     const db = wx.cloud.database()
-    // console.log("失去焦点")
+    console.log("失去焦点")
     this.editorCtx.getContents({
-      success:(res)=>{
+      success: (res) => {
         //文字
         // console.log(Object.values(res.delta.ops[0]))
         //图片
         // console.log(Object.values(Object.values(res.delta.ops[0])[1])[0])
 
-        console.log(res)
-        for(let item in res.delta.ops){
-          for(let item2 in item){
-            console.log(item2)
+        // console.log(res)
+        for (let item in res.delta.ops) {
+          for (let item2 in item) {
+            // console.log(item2)
           }
         }
         //图片上传至云存储
@@ -80,29 +87,43 @@ Page({
         // })
 
         //上传至数据库
-        db.collection("notes").add({
-          data:{
-            day: new Date().toDateString().slice(8,10),
-            month: new Date().toDateString().slice(4,7).toUpperCase(),
-            year: new Date().toDateString().slice(11,15),
-            html: res.html,
-            preview: Object.values(res.delta.ops[0])[0]
-            
-          },
-          success(){
-            console.log("上传成功")
-          },
-          fail(res){
-            console.log("上传失败",res)
-          }
-        })
+        if (this.data.noteId == 0) {
+          db.collection("notes").add({
+            data: {
+              day: new Date().toDateString().slice(8, 10),
+              month: new Date().toDateString().slice(4, 7).toUpperCase(),
+              year: new Date().toDateString().slice(11, 15),
+              html: res.html,
+              preview: Object.values(res.delta.ops[0])[0]
+            },
+            success() {
+              console.log("上传成功")
+            },
+            fail(res) {
+              console.log("上传失败", res)
+            }
+          })
+        } else {
+          //处理更新
+          console.log("处理更新")
+          console.log(this.data.noteId)
+        
+          db.collection('notes').doc(this.data.noteId).update({
+            data:{
+              html: res.html,
+              preview: Object.values(res.delta.ops[0])[0]
+            }
+          }).then(res=>{
+            console.log(res,'update success')
+          })
+        }
       }
     })
-    
+
   },
-  back(){
-    wx.navigateBack({
-      delta: 1,
+  back() {
+    wx.redirectTo({
+      url: '/pages/index/index',
     })
   },
   readOnlyChange() {
@@ -110,17 +131,28 @@ Page({
       readOnly: !this.data.readOnly
     })
   },
-  
+
   updatePosition(keyboardHeight) {
     const toolbarHeight = 50
-    const { windowHeight, platform } = wx.getSystemInfoSync()
+    const {
+      windowHeight,
+      platform
+    } = wx.getSystemInfoSync()
     let editorHeight = keyboardHeight > 0 ? (windowHeight - keyboardHeight - toolbarHeight) : windowHeight
-    let changeHeight = keyboardHeight > 0 ? 61 : 77
-    this.setData({ editorHeight, keyboardHeight, changeHeight})
+    //更改可视区高度
+    let changeHeight = keyboardHeight > 0 ? 64 : 110
+    this.setData({
+      editorHeight,
+      keyboardHeight,
+      changeHeight
+    })
   },
   calNavigationBarAndStatusBar() {
     const systemInfo = wx.getSystemInfoSync()
-    const { statusBarHeight, platform } = systemInfo
+    const {
+      statusBarHeight,
+      platform
+    } = systemInfo
     const isIOS = platform === 'ios'
     const navigationBarHeight = isIOS ? 44 : 48
     return statusBarHeight + navigationBarHeight
@@ -135,7 +167,10 @@ Page({
     this.editorCtx.blur()
   },
   format(e) {
-    let { name, value } = e.target.dataset
+    let {
+      name,
+      value
+    } = e.target.dataset
     if (!name) return
     // console.log('format', name, value)
     this.editorCtx.format(name, value)
@@ -143,7 +178,9 @@ Page({
   },
   onStatusChange(e) {
     const formats = e.detail
-    this.setData({ formats })
+    this.setData({
+      formats
+    })
   },
   insertDivider() {
     this.editorCtx.insertDivider({

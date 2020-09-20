@@ -1,0 +1,22 @@
+<view class="bg-white box">
+  <view class="bg-white" style="height:{{CustomBar}}px">
+    <view class="icon-box">
+      <view class="leftIcon" bindtap="back">
+        <view class="cuIcon-back"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="title">
+    ABOUT ME
+  </view>
+  <view class="content">
+    <view class="avatar">
+      <image src="https://7369-simple-note-develop-sql1w-1303186574.tcb.qcloud.la/68004287_0.jpg?sign=d7ca86229128279b3558d1ee1b97df76&t=1600614177" mode="widthFix"></image>
+    </view>
+    <view class="web">
+      <view class="subTitle">MY WEBSITE:</view>
+      <view class="website">https://momiki.life</view>
+    </view>
+  </view>
+</view>

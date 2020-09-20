@@ -2,7 +2,7 @@
 	<view class="bg-white" style="height:{{CustomBar}}px">
 		<view class="icon-box">
 			<view class="date" bindtap="titleArea">
-				{{mode}} 
+				WRITTING
 			</view>
 			<view class="leftIcon" bindtap="back">
 				<view class="cuIcon-back"></view>
@@ -12,10 +12,10 @@
 	<date-info></date-info>
 	<view class="container" style="height: {{changeHeight}}vh;">
 		<editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
-			bindready="onEditorReady" show-img-resize="true" bindblur="">
+			bindready="onEditorReady" show-img-resize="true" bindblur="save">
 		</editor>
 	</view>
-<button bindtap="save">test</button>
+<!-- <button bindtap="save">test</button> -->
 	<view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}"
 		style="bottom: {{isIOS ? keyboardHeight : 0}}px">
 		<i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>

@@ -41,6 +41,7 @@
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "current": -1,
@@ -90,6 +91,20 @@
           "id": -1,
           "name": "Editor",
           "pathName": "pages/editor/editor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "ABOUT ME",
+          "pathName": "pages/aboutMe/aboutMe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "ALARM",
+          "pathName": "pages/alarm/alarm",
           "query": "",
           "scene": null
         }

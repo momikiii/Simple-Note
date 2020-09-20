@@ -1,7 +1,6 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
-page{
-}
+
 .icon-box{
   position: relative;
   height: 100%;
@@ -13,6 +12,7 @@ page{
   bottom: 18rpx;
 }
 .date{
+  animation: flipInX 1s;
   color: rgb(60, 60, 60);
   font-size: 40rpx;
   font-weight: 700;
@@ -39,12 +39,20 @@ page{
   text-align: center;
   font-size: 45rpx;
   font-weight: 700;
+  letter-spacing: 3rpx;
 }
 .hover{
   animation-duration: 0.3s;
 }
+button::after{
+  border: none;
+}
 .txt-item{
+  background-color: white;
+  font-size: 45rpx;
+  font-weight: 700;
   animation-duration: 0.3s;
+  color: rgb(112, 112, 112);
 }
 .alarm{
   animation-delay: 0.05s;

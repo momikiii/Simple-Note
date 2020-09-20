@@ -3,6 +3,7 @@
 @import "/utils/iconfont.wxss";
 
 .card-box{
+  /* animation: slideInDown 1s; */
   border-radius: 14rpx;
   margin: 30rpx auto;
   width: 690rpx;

@@ -15,19 +15,21 @@
   float: left;
 }
 .add{
+  animation: flipInX 0.5s;
   float: left;
   width: 470rpx;
   height: 100%;
   /* background-color: pink; */
 }
 .day{
-  margin-top: 55rpx;
+  animation: flipInX 0.5s;
+  margin-top: 40rpx;
   text-align: center;
   font-weight: 600;
   font-size: 65rpx;
 }
 .month{
-  margin-top: 17rpx;
+  margin-top: 0rpx;
   text-align: center;
   font-size: 23rpx;
 }

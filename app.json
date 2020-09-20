@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/launch/launch",
     "pages/diary/diary",
-    "pages/cardpage/cardpage"
+    "pages/cardpage/cardpage",
+    "pages/alarm/alarm",
+    "pages/aboutMe/aboutMe"
   ],
   "window": {
     "backgroundTextStyle": "light",

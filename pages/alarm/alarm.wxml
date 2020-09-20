@@ -1,0 +1,26 @@
+<view class="bg-white box">
+  <view class="bg-white" style="height:{{CustomBar}}px">
+    <view class="icon-box">
+      <view class="leftIcon" bindtap="back">
+        <view class="cuIcon-back"></view>
+      </view>
+    </view>
+  </view>
+  <view class="title">
+    TO BE DEVELOPED
+  </view>
+  <view class="content">
+    <view class="txt-zh">图片预览</view>
+    <view class="txt-en">PICTURE PREVIEW</view>
+    <view class="txt-zh">天气更换</view>
+    <view class="txt-en">CHANGING WEATHER</view>
+    <view class="txt-zh">更多动画</view>
+    <view class="txt-en">MORE ANIMATIONS</view>
+    <view class="txt-zh">月份整理夹</view>
+    <view class="txt-en">MONTH COLLECTION</view>
+  </view>
+  <view class="footer">
+    <view>希望正在使用SIMPLE NOTE的您</view>
+    <view>能向开发者本人提供更好的想法</view>
+  </view>
+</view>
