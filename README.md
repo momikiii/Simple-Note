@@ -2,12 +2,5 @@
 个人生活记录用小程序
 
 
-# GIT教程
-**git add .**
-添加所有文件到暂存区
-
-**git commit -m '提交描述'**
-提交所有暂存区文件到本地git仓库
-
-**git push**
-将本地仓库代码推送至远程仓库
+# 详细介绍请移步
+[详细文档介绍](https://developers.weixin.qq.com/community/develop/article/doc/000c24afb50e5850c9fa0256251013)
